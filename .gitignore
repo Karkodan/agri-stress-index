@@ -1,0 +1,46 @@
+# Logs and caches
+*.log
+__pycache__/
+*.py[cod]
+*.ipynb_checkpoints/
+
+# Data and models
+data/
+datasets/
+*.csv
+*.tsv
+*.xlsx
+*.json
+*.parquet
+*.pkl
+*.h5
+*.pt
+*.joblib
+*.jpg
+*.shp
+*.dbf
+*.shx
+
+# Model outputs and diagnostics
+outputs/
+checkpoints/
+runs/
+*.npy
+*.npz
+
+# Environment and build
+.env
+*.db
+*.sqlite
+*.egg-info/
+dist/
+build/
+*.tar.gz
+
+# VSCode and editor configs
+.vscode/
+.idea/
+
+# OS-specific
+.DS_Store
+Thumbs.db

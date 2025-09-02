@@ -1,0 +1,34 @@
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.log
+
+# Model and data files
+models/
+data/
+*.csv
+*.tsv
+*.json
+*.h5
+*.pt
+*.ckpt
+
+# QA and batch outputs
+qa_outputs/
+vision_cache/
+*.png
+*.jpg
+
+# Env and config
+.env
+*.db
+*.sqlite
+*.bak
+
+# Misc
+logs/
+tests/
+notebooks/

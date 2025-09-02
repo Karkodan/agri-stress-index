@@ -1,0 +1,5 @@
+Samples: 212019
+MSE: 0.0118
+R²: -0.0326
+Model: RandomForestRegressor(n_estimators=100)
+Scaler: StandardScaler()

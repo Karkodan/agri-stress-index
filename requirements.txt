@@ -1,0 +1,31 @@
+# Core API stack
+fastapi==0.116.1
+uvicorn==0.35.0
+pydantic==1.10.13
+python-multipart==0.0.9
+httpx==0.27.0
+aiohttp==3.9.5
+gunicorn==21.2.0
+sqlalchemy==2.0.43
+email-validator==2.2.0
+python-dotenv==1.1.1
+requests==2.31.0
+
+# Scientific and ML stack
+numpy==1.26.3                # Compatible with TensorFlow, SciPy, OpenCV
+scipy==1.16.1
+pandas==2.2.2
+matplotlib==3.10.5
+openpyxl==3.1.5
+tensorflow==2.19.0
+spacy==3.7.4
+opencv-python==4.8.0.76      # Avoids numpy>=2 conflict
+sentence-transformers==5.1.0
+transformers==4.55.4
+
+# LangChain and CLI tooling
+langchain==0.1.20
+typer==0.9.4
+
+# Database
+psycopg2-binary==2.9.10
