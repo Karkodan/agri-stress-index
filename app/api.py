@@ -1,23 +1,42 @@
 # app/api.py
 
 from fastapi import APIRouter
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from datetime import datetime
 from app import csi_logic
 import logging
 
 router = APIRouter()
 
-# Optional: configure logging for audit trails
+# Configure logging for audit trails
 logger = logging.getLogger("csi_logger")
 logging.basicConfig(level=logging.INFO)
 
 class CSIRequest(BaseModel):
-    canopy_temp: float
-    ambient_temp: float
-    soil_moisture: float
+    canopy_temp: float = Field(..., description="Canopy temperature in °C")
+    ambient_temp: float = Field(..., description="Ambient air temperature in °C")
+    soil_moisture: float = Field(..., description="Volumetric soil moisture (%)")
 
-@router.post("/compute-csi")
+@router.post(
+    "/",
+    summary="Compute Crop Stress Index (CSI)",
+    description="""
+Calculates the Crop Stress Index (CSI) using canopy temperature, ambient temperature, and soil moisture.
+
+**Use Cases:**
+- Field-level stress diagnostics
+- Mobile dashboard integration
+- Scientific modeling and investor demos
+
+**Returns:**
+- CSI value
+- Input echo
+- Timestamp
+- API version
+""",
+    response_description="Structured CSI result with metadata",
+    tags=["CSI"]
+)
 def compute_csi(data: CSIRequest):
     result = csi_logic.compute_csi(
         canopy_temp=data.canopy_temp,
